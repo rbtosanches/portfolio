@@ -1,0 +1,149 @@
+Você é uma pessoa especialista em Python, modelagem de dados e geração de dados sintéticos.
+
+Preciso que você desenvolva um script em Python para gerar um dataset sintético de vendas de uma concessionária de veículos especializada em caminhonetes.
+
+1. Objetivo
+
+Gerar um dataset com 500 ou 1000 registros de vendas (configurável por parâmetro), contendo histórico dos últimos 4 anos.
+
+Cada linha do dataset deve representar uma venda de um único veículo.
+
+2. Produtos
+
+A concessionária vende os seguintes modelos:
+
+Modelo	Preço de tabela
+X1	R$ 200.000
+X2	R$ 220.000
+X3	R$ 280.000
+3. Vendedores
+
+As vendas são realizadas pelos seguintes vendedores:
+
+V1
+V2
+V3
+V4
+V5
+
+Cada vendedor deve possuir uma meta individual de vendas/faturamento.
+
+4. Clientes
+
+Os clientes devem possuir identificadores como:
+
+C001
+C002
+C003
+...
+
+Regras de recompra:
+
+Cada cliente pode comprar um novo veículo em um dos seguintes intervalos:
+
+a cada 1 ano
+a cada 2 anos
+a cada 2,5 anos
+
+Também deve existir uma probabilidade de churn/recompra, ou seja:
+
+alguns clientes continuam comprando
+alguns deixam de comprar ao longo do tempo
+5. Localização dos clientes
+
+Distribuir os clientes entre as cidades abaixo, respeitando a seguinte lógica:
+
+Maioria dos clientes:
+
+Cuiabá
+Várzea Grande
+
+Menor volume de clientes:
+
+Diamantino
+Nova Mutum
+
+A distribuição deve seguir pesos realistas.
+
+6. Condições comerciais
+Parcelamento
+
+Cada venda pode ser parcelada em:
+
+1x
+2x
+3x
+Descontos
+
+O vendedor pode aplicar:
+
+0%
+2%
+5%
+Brindes
+
+O vendedor pode conceder um ou mais brindes:
+
+Código	Valor
+K0	R$ 0
+K1	R$ 3.000
+K2	R$ 4.500
+K3	R$ 2.000
+Regra obrigatória:
+
+Se o brinde for K0, nenhum outro brinde pode ser concedido na mesma venda.
+
+7. Inteligência de negócio
+
+O dataset deve incluir:
+
+Sazonalidade de vendas
+
+Simular meses com maior e menor volume de vendas, criando comportamento realista de mercado ao longo do ano.
+
+Performance comercial
+
+Incluir métricas como:
+
+meta do vendedor
+faturamento da venda
+margem após desconto e brindes
+8. Simulação de problemas de qualidade de dados
+
+Injetar erros em aproximadamente 5% dos registros para simular problemas reais de dados.
+
+Os erros devem variar entre:
+
+Campos nulos ou em branco
+data_venda em branco
+cliente_id em branco
+cidade em branco
+modelo em branco
+brindes em branco
+Valores inválidos
+preco_tabela zerado
+preco_tabela fora dos padrões esperados
+parcelas contendo texto em vez de número
+desconto fora da regra de negócio
+
+Exemplos:
+
+preço = 0
+preço = 999999
+parcelas = "texto"
+desconto = 99%
+9. Entregável esperado
+
+O script deve:
+
+Ser implementado em Python
+Utilizar preferencialmente Pandas
+ e NumPy
+Gerar os dados sintéticos
+Exportar o resultado para CSV
+Produzir dados suficientemente realistas para uso em:
+BI
+Engenharia de Dados
+Data Quality
+Machine Learning
+Testes de pipelines

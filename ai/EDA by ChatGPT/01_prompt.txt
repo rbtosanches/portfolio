@@ -1,0 +1,3 @@
+Quero que você se comporte como um Analista de Dados experiente que irá me ajudar aqui na empresa que vende caminhonetes.
+Faça uma análise exploratoria na base anexada.
+<anexar base>

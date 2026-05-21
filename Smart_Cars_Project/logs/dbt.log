@@ -1,0 +1,83 @@
+==================== 2026-05-18T21:25:44.605490Z | 019e3cfb-05fb-7da2-be93-bd0dc706e676 ====================
+21:25:44.612761 [info ]: Installing dbt project and profile setup
+21:25:44.626248 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+21:25:44.630489 [info ]: Success Project created successfully!
+21:25:44.630590 [info ]: Info Project name: jaffle_shop
+21:25:44.630640 [info ]: Info Project directory: jaffle_shop
+21:25:44.630736 [info ]: Info Setting up your profile...
+21:25:44.636589 [info ]: Loading ~/.dbt/profiles.yml
+21:25:44.657429 [info ]: Info Creating new profile...
+21:26:09.387838 [info ]: No dbt_cloud.yml found - proceeding without cloud pre-population
+21:27:16.533693 [info ]: Success Profile written to /home/sanches/.dbt/profiles.yml
+21:27:16.542737 [info ]: Validating profile inputs, adapters, and connection
+
+21:27:16.542774 [info ]: dbt-fusion 2.0.0-preview.175
+21:27:16.546231 [info ]: Started loading project
+21:27:16.571553 [info ]: Loading ~/.dbt/profiles.yml
+21:27:16.581979 [info ]: Finished loading project [  0.04s]
+21:27:16.583404 [info ]: Started debugging
+21:27:16.583452 [info ]: Debugging profile: dev
+21:27:16.583479 [info ]: Debugging dbt version: 2.0.0-preview.175
+21:27:16.583494 [info ]: Debugging platform: linux x86_64 (unix)
+21:27:16.583930 [info ]: Debugging adapter type: postgres (remote)
+21:27:16.586251 [info ]: Debugging dependencies:
+  git: OK
+21:27:16.592360 [info ]: Debugging connection:
+  "port": 5432,
+  "database": "smart_cars",
+  "schema": "public",
+  "host": "localhost",
+  "user": "sanches"
+21:27:17.750111 [info ]: Finished debugging [  1.17s]
+21:27:17.755005 [error]: dbt1011: dbt was unable to connect to the specified database.
+The following error was returned:
+
+[libpq] Failed to connect: connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  banco de dados "smart_cars" não existe
+
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/core/connect-data-platform/connection-profiles
+21:27:18.262134 [info ]: New version available 2.0.0-preview.176 (run `dbt system update`)
+21:27:18.590267 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' with 1 error for target 'dev' [1m 34s]
+==================== 2026-05-18T21:33:30.868845Z | 019e3d02-2372-7441-aea7-985e8d008ae8 ====================
+21:33:30.869006 [info ]: Installing dbt project and profile setup
+21:33:30.869174 [info ]: Warning Directory 'jaffle_shop' already exists, using 'jaffle_shop_1' instead
+21:33:30.871125 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+21:33:30.871190 [info ]: Success Project created successfully!
+21:33:30.871210 [info ]: Info Project name: jaffle_shop_1
+21:33:30.871231 [info ]: Info Project directory: jaffle_shop_1
+21:33:30.871259 [info ]: Info Setting up your profile...
+21:33:30.871397 [info ]: Loading ~/.dbt/profiles.yml
+21:33:30.871947 [info ]: Info Creating new profile...
+21:33:35.369879 [info ]: No dbt_cloud.yml found - proceeding without cloud pre-population
+21:34:07.930866 [info ]: Success Profile written to /home/sanches/.dbt/profiles.yml
+21:34:07.931058 [info ]: Validating profile inputs, adapters, and connection
+
+21:34:07.931126 [info ]: dbt-fusion 2.0.0-preview.175
+21:34:07.931865 [info ]: Started loading project
+21:34:07.934309 [info ]: Loading ~/.dbt/profiles.yml
+21:34:07.936124 [info ]: Finished loading project [  0.00s]
+21:34:07.936520 [info ]: Started debugging
+21:34:07.936618 [info ]: Debugging profile: dev
+21:34:07.936691 [info ]: Debugging dbt version: 2.0.0-preview.175
+21:34:07.936746 [info ]: Debugging platform: linux x86_64 (unix)
+21:34:07.936811 [info ]: Debugging adapter type: postgres (remote)
+21:34:07.941646 [info ]: Debugging dependencies:
+  git: OK
+21:34:07.941973 [info ]: Debugging connection:
+  "port": 5432,
+  "database": "smart_cars",
+  "schema": "bronze",
+  "host": "localhost",
+  "user": "sanches"
+21:34:08.045019 [debug]: Query executed on node unknown:
+select 1 as id
+21:34:08.049482 [info ]: Debugging connection test: OK
+21:34:08.049551 [info ]: Debugged All checks passed!
+21:34:08.049581 [info ]: Finished debugging [  0.11s]
+21:34:08.836413 [info ]: New version available 2.0.0-preview.176 (run `dbt system update`)
+21:34:09.020042 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' successfully for target 'dev' [38.2s]
