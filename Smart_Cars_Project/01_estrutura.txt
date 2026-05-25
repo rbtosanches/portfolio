@@ -1,0 +1,8 @@
+pickups_pipeline/
+├── dags/
+├── data/
+├── dbt/
+├── logs/
+├── plugins/
+├── docker-compose.yaml
+└── requirements.txt

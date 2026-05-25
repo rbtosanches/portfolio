@@ -1,0 +1,45 @@
+$ python3 01_validar_csv.py 
+--- Relatório de Qualidade: pickup_sales_dataset.csv ---
+
+Total de Registros: 1000
+Total de Colunas: 16
+------------------------------
+Valores Nulos por Coluna:
+sale_date      6
+customer_id    5
+city           4
+model          3
+gifts          6
+dtype: int64
+------------------------------
+Linhas Duplicadas: 285
+------------------------------
+Tipos de Dados:
+sale_date          object
+year                int64
+month               int64
+customer_id        object
+city               object
+model              object
+list_price          int64
+salesperson        object
+sales_target        int64
+installments       object
+discount_pct      float64
+discount_value    float64
+gifts              object
+gift_cost           int64
+gross_revenue     float64
+net_margin        float64
+dtype: object
+------------------------------
+Resumo Estatístico (Colunas Numéricas):
+              year        month     list_price  sales_target  discount_pct  discount_value    gift_cost  gross_revenue     net_margin
+count  1000.000000  1000.000000    1000.000000  1.000000e+03    1000.00000     1000.000000  1000.000000    1000.000000    1000.000000
+mean   2024.261000     6.498000  237299.993000  1.903000e+06       0.02786     5432.200000  4935.500000  228447.800000  223512.300000
+std       1.180793     3.631416   75644.043675  2.826144e+05       0.07124     5014.002731  3614.852266   34039.054223   34082.366209
+min    2022.000000     1.000000       0.000000  1.500000e+06       0.00000        0.000000     0.000000  190000.000000  180500.000000
+25%    2023.000000     3.000000  200000.000000  1.700000e+06       0.00000        0.000000  2000.000000  200000.000000  195000.000000
+50%    2024.000000     6.000000  220000.000000  1.900000e+06       0.02000     4400.000000  5000.000000  215600.000000  210500.000000
+75%    2025.000000    10.000000  280000.000000  2.100000e+06       0.05000    10000.000000  9500.000000  266000.000000  264000.000000
+max    2026.000000    12.000000  999999.000000  2.300000e+06       0.99000    14000.000000  9500.000000  280000.000000  280000.000000

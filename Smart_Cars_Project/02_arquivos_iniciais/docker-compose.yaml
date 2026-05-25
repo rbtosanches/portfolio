@@ -1,0 +1,83 @@
+services:
+
+  postgres:
+    image: postgres:16
+
+    container_name: postgres_pickup
+
+    environment:
+      POSTGRES_USER: sanches
+      POSTGRES_PASSWORD: beta2020
+      POSTGRES_DB: smart_cars
+
+    ports:
+      - "5433:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  airflow-webserver:
+    image: apache/airflow:2.10.5
+    
+    user: "50000:0"
+
+    container_name: airflow_webserver
+
+    depends_on:
+      - postgres
+
+    restart: always
+
+    command: webserver
+
+    ports:
+      - "8080:8080"
+
+    environment:
+
+      AIRFLOW__CORE__EXECUTOR: SequentialExecutor
+
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://sanches:beta2020@postgres:5432/smart_cars
+
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+
+      AIRFLOW_CONN_POSTGRES_PICKUP: postgresql://sanches:beta2020@postgres:5432/smart_cars
+
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./data:/opt/airflow/data
+      - ./dbt:/opt/airflow/dbt
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+
+  airflow-scheduler:
+    image: apache/airflow:2.10.5
+
+    container_name: airflow_scheduler
+
+    depends_on:
+      - airflow-webserver
+
+    restart: always
+
+    command: scheduler
+
+    environment:
+
+      AIRFLOW__CORE__EXECUTOR: SequentialExecutor
+
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://sanches:beta2020@postgres:5432/smart_cars
+
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+
+      AIRFLOW_CONN_POSTGRES_PICKUP: postgresql://sanches:beta2020@postgres:5432/smart_cars
+
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./data:/opt/airflow/data
+      - ./dbt:/opt/airflow/dbt
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+
+volumes:
+  postgres_data:

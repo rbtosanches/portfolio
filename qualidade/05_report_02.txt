@@ -1,0 +1,32 @@
+$ python3 02_tst.py 
+LOG: Iniciando o script...
+LOG: Arquivo encontrado. Tamanho: 96292 bytes.
+LOG: Tentando ler o CSV com o Pandas...
+
+====================================
+SUCESSO! Linhas: 1000 | Colunas: 16
+====================================
+
+--- VALORES NULOS ---
+sale_date         6
+year              0
+month             0
+customer_id       5
+city              4
+model             3
+list_price        0
+salesperson       0
+sales_target      0
+installments      0
+discount_pct      0
+discount_value    0
+gifts             6
+gift_cost         0
+gross_revenue     0
+net_margin        0
+dtype: int64
+
+--- DUPLICADAS ---
+Total: 285
+
+LOG: Fim do script.
